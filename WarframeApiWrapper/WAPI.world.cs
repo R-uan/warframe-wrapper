@@ -9,10 +9,13 @@ namespace WarframeApiWrapper
         public static async Task<CambionDriftStatus> GetDeimosStatus()
             => await WarframeApiClient.Get<CambionDriftStatus>(Endpoints.CambionDriftStatus) ?? throw new Exception();
 
-        public static async Task<OrbVallisStatus> GetVallisStatus() 
+        public static async Task<OrbVallisStatus> GetVallisStatus()
             => await WarframeApiClient.Get<OrbVallisStatus>(Endpoints.VallisStatus) ?? throw new Exception();
-        
+
         public static async Task<List<Alert>> GetAlerts()
             => await WarframeApiClient.Get<List<Alert>>(Endpoints.Alerts) ?? throw new Exception();
+
+        public static async Task<List<Fissure>> GetFissures()
+            => await WarframeApiClient.Get<List<Fissure>>(Endpoints.Fissure) ?? throw new Exception();
     }
 }

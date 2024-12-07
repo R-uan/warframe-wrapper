@@ -9,13 +9,3 @@ namespace WarframeApiWrapper.Objects {
         public required string ShortString {get;set;}
     }
 }
-
-/*
-    id	"vallisCycle1732558020000"
-expiry	"2024-11-25T18:27:08.000Z"
-isWarm	false
-state	"cold"
-activation	"2024-11-25T18:07:00.000Z"
-timeLeft	"19m 7s"
-shortString	"19m to Warm"
- */

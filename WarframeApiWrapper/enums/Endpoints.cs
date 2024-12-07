@@ -5,6 +5,7 @@ namespace WarframeApiWrapper
         CetusStatus,
         CambionDriftStatus,
         VallisStatus,
-        Alerts
+        Alerts,
+        Fissure
     }
 }

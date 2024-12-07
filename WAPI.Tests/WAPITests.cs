@@ -31,7 +31,20 @@ namespace WAPI.Tests
         public async Task GetAlertsTest() {
             var request = await WarframeApiWrapper.WAPI.GetAlerts();
             Assert.IsType<List<Alert>>(request);
-            Assert.NotEqual(Faction.Unknown, request[0].Mission.Faction);
+            foreach(var alert in request) {
+                Assert.NotEqual(Faction.Unknown, alert.Mission.Faction);
+                Assert.NotEqual(MissionType.Unknown, alert.Mission.Type);
+            }
+        }
+
+        [Fact]
+        public async Task GetFissuresTest() {
+            var request = await WarframeApiWrapper.WAPI.GetFissures();
+            Assert.IsType<List<Fissure>>(request);
+            foreach(var fissure in request) {
+                Assert.NotEqual(MissionType.Unknown, fissure.MissionType);
+                Assert.NotEqual(FissureTier.Unknown, fissure.Tier);
+            }
         }
     }
 }

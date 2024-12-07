@@ -12,7 +12,8 @@ namespace WarframeApiWrapper
             { Endpoints.CetusStatus, "/cetusCycle" },
             { Endpoints.CambionDriftStatus, "/cambionCycle" },
             { Endpoints.VallisStatus, "/vallisCycle" },
-            { Endpoints.Alerts, "/alerts" }
+            { Endpoints.Alerts, "/alerts" },
+            { Endpoints.Fissure, "/fissures" }
         };
 
         public static async Task<T?> Get<T>(Endpoints endpoint)
@@ -20,8 +21,12 @@ namespace WarframeApiWrapper
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true,
-                Converters = { new FactionConverter() }
-            }; 
+                Converters = {
+                    new FactionConverter(),
+                    new FissureTierConverter(),
+                    new MissionTypeConverter()
+                }
+            };
             var target = $"{BaseURL}{ApiEndpoints[endpoint]}";
             using HttpClient client = new HttpClient();
             var request = await client.GetStringAsync(target);
