@@ -6,6 +6,7 @@ namespace WarframeApiWrapper
         CambionDriftStatus,
         VallisStatus,
         Alerts,
-        Fissure
+        Fissure,
+        ArchonHunt
     }
 }

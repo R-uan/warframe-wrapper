@@ -7,13 +7,19 @@ namespace WarframeApiWrapper.Converters {
         public override Faction Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var value = reader.GetString()?.ToLower();
-            return value switch {
+
+            var placeholder = value switch {
                 "grineer" => Faction.Grineer,
                 "corpus" => Faction.Corpus,
                 "infested" => Faction.Infested,
                 "orokin" => Faction.Orokin,
+                "narmer" => Faction.Narmer,
                 _ => Faction.Unknown
             };
+
+            Console.WriteLine($"{value} = {placeholder}");
+
+            return placeholder;
         }
 
         public override void Write(Utf8JsonWriter writer, Faction value, JsonSerializerOptions options)
@@ -24,6 +30,7 @@ namespace WarframeApiWrapper.Converters {
                 Faction.Corpus => "Corpus",
                 Faction.Infested => "Infested",
                 Faction.Unknown => "Unknown",
+                Faction.Narmer => "Narmer",
                 _ => "Unknown"
             };
 

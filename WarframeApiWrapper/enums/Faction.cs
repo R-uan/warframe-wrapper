@@ -5,6 +5,7 @@ namespace WarframeApiWrapper {
         Infested,
         Orokin,
         Murmur,
+        Narmer,
         Unknown
     }
 }

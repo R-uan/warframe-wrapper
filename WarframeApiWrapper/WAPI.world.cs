@@ -17,5 +17,8 @@ namespace WarframeApiWrapper
 
         public static async Task<List<Fissure>> GetFissures()
             => await WarframeApiClient.Get<List<Fissure>>(Endpoints.Fissure) ?? throw new Exception();
+    
+        public static async Task<ArchonHunt> GetArchonHunt() 
+            => await WarframeApiClient.Get<ArchonHunt>(Endpoints.ArchonHunt) ?? throw new Exception();
     }
 }

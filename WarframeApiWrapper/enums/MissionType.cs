@@ -1,9 +1,12 @@
-namespace WarframeApiWrapper {
-    public enum MissionType {
+namespace WarframeApiWrapper
+{
+    public enum MissionType
+    {
         Defense,
         MobileDefense,
         Survival,
         Extermination,
+        Disruption,
         Excavation,
         Spy,
         Interception,
@@ -16,8 +19,10 @@ namespace WarframeApiWrapper {
         VoidArmagedon,
         Assassination,
         Corruption,
+        Orphix,
         Skirmish,
         Volatile,
-        Unknown,       
+        Assault,
+        Unknown,
     }
 }

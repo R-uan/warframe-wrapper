@@ -9,11 +9,12 @@ namespace WarframeApiWrapper
         private static string BaseURL = "https://api.warframestat.us/pc";
         private static readonly Dictionary<Endpoints, string> ApiEndpoints = new()
         {
-            { Endpoints.CetusStatus, "/cetusCycle" },
-            { Endpoints.CambionDriftStatus, "/cambionCycle" },
-            { Endpoints.VallisStatus, "/vallisCycle" },
             { Endpoints.Alerts, "/alerts" },
-            { Endpoints.Fissure, "/fissures" }
+            { Endpoints.Fissure, "/fissures" },
+            { Endpoints.ArchonHunt, "/archonHunt" },
+            { Endpoints.CetusStatus, "/cetusCycle" },
+            { Endpoints.VallisStatus, "/vallisCycle" },
+            { Endpoints.CambionDriftStatus, "/cambionCycle" },
         };
 
         public static async Task<T?> Get<T>(Endpoints endpoint)
@@ -27,6 +28,7 @@ namespace WarframeApiWrapper
                     new MissionTypeConverter()
                 }
             };
+            
             var target = $"{BaseURL}{ApiEndpoints[endpoint]}";
             using HttpClient client = new HttpClient();
             var request = await client.GetStringAsync(target);

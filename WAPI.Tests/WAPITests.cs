@@ -11,6 +11,8 @@ namespace WAPI.Tests
             var request = await WarframeApiWrapper.WAPI.GetCetusStatus();
             Assert.IsType<CetusStatus>(request);
             Assert.NotNull(request.Id);
+            Assert.True(request.State == "night" || request.State == "day");
+
         }
 
         [Fact]
@@ -44,6 +46,18 @@ namespace WAPI.Tests
             foreach(var fissure in request) {
                 Assert.NotEqual(MissionType.Unknown, fissure.MissionType);
                 Assert.NotEqual(FissureTier.Unknown, fissure.Tier);
+            }
+        }
+
+        [Fact]
+        public async Task GetArchonHuntTest() {
+            var request = await WarframeApiWrapper.WAPI.GetArchonHunt();
+            Assert.IsType<ArchonHunt>(request);
+            Assert.NotNull(request.Id);
+            Assert.NotEqual(Faction.Unknown, request.Faction);
+            Assert.Equal(3, request.Missions.Count);
+            foreach(var mission in request.Missions) {
+                Assert.NotEqual(MissionType.Unknown, mission.Type);
             }
         }
     }

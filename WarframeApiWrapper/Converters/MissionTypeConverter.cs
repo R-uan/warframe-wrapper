@@ -17,10 +17,12 @@ namespace WarframeApiWrapper.Converters
                 "spy" => MissionType.Spy,
                 "rescue" => MissionType.Rescue,
                 "capture" => MissionType.Capture,
+                "assault" => MissionType.Assault,
                 "defense" => MissionType.Defense,
                 "sabotage" => MissionType.Sabotage,
                 "survival" => MissionType.Survival,
                 "excavation" => MissionType.Excavation,
+                "disruption" => MissionType.Disruption,
                 "interception" => MissionType.Interception,
                 "assassination" => MissionType.Assassination,
                 "extermination" => MissionType.Extermination,
@@ -30,6 +32,7 @@ namespace WarframeApiWrapper.Converters
                 // Railjack
                 "skirmish" => MissionType.Skirmish,
                 "volatile" => MissionType.Volatile,
+                "orphix" => MissionType.Orphix,
                 // Zariman
                 "void flood" => MissionType.VoidFlood,
                 "void cascade" => MissionType.VoidCascade,
@@ -40,6 +43,7 @@ namespace WarframeApiWrapper.Converters
                 _ => MissionType.Unknown
             };
 
+            Console.WriteLine($"{missionType} = {placeholder}");
 
             return placeholder;
         }
@@ -50,11 +54,13 @@ namespace WarframeApiWrapper.Converters
             {
                 MissionType.Spy => "Spy",
                 MissionType.Rescue => "Rescue",
+                MissionType.Assault => "Assault",
                 MissionType.Capture => "Capture",
                 MissionType.Defense => "Defense",
                 MissionType.Sabotage => "Sabotage",
                 MissionType.Survival => "Survival",
                 MissionType.Excavation => "Excavation",
+                MissionType.Disruption => "Disruption",
                 MissionType.Interception => "Interception",
                 MissionType.Assassination => "Assassination",
                 MissionType.Extermination => "Extermination",
@@ -66,9 +72,10 @@ namespace WarframeApiWrapper.Converters
                 MissionType.VoidCascade => "Void Cascade",
                 MissionType.VoidArmagedon => "Void Armagedon",
                 
+                MissionType.Orphix => "Orphix",
                 MissionType.Volatile => "Volatile",
                 MissionType.Skirmish => "Skirmish",
-                
+
                 MissionType.Unknown => "Unknown",
                 MissionType.Corruption => "Corruption",
                 _ => "Unknown"
