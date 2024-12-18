@@ -18,12 +18,14 @@ namespace WarframeApiWrapper.Objects
     public class Mission
     {
         public required string Node { get; set; }
+        public required Reward Reward { get; set; }
+        public required string Description { get; set; }
+
         [JsonConverter(typeof(MissionTypeConverter))]
         public required MissionType Type { get; set; }
+        
         [JsonConverter(typeof(FactionConverter))]
         public required Faction Faction { get; set; }
-        public required string Description { get; set; }
-        public required Reward Reward { get; set; }
     }
 
     public class Reward
@@ -35,11 +37,5 @@ namespace WarframeApiWrapper.Objects
         public int MaxEnemyLevel { get; set; }
         public bool ArchwingRequired { get; set; }
         public required string AsString { get; set; }
-    }
-
-    public class CountedItem
-    {
-        public int Count { get; set; }
-        public required string Type { get; set; }
     }
 }

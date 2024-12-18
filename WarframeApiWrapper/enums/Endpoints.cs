@@ -7,6 +7,7 @@ namespace WarframeApiWrapper
         VallisStatus,
         Alerts,
         Fissure,
-        ArchonHunt
+        ArchonHunt,
+        Invasions
     }
 }

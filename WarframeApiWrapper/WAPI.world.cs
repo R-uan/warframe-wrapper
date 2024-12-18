@@ -1,4 +1,5 @@
 using WarframeApiWrapper.Objects;
+
 namespace WarframeApiWrapper
 {
     public partial class WAPI
@@ -17,8 +18,11 @@ namespace WarframeApiWrapper
 
         public static async Task<List<Fissure>> GetFissures()
             => await WarframeApiClient.Get<List<Fissure>>(Endpoints.Fissure) ?? throw new Exception();
-    
-        public static async Task<ArchonHunt> GetArchonHunt() 
+
+        public static async Task<ArchonHunt> GetArchonHunt()
             => await WarframeApiClient.Get<ArchonHunt>(Endpoints.ArchonHunt) ?? throw new Exception();
+    
+        public static async Task<List<Invasion>> GetInvasions() 
+            => await WarframeApiClient.Get<List<Invasion>>(Endpoints.Invasions) ?? throw new Exception();
     }
 }

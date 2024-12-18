@@ -14,12 +14,18 @@ namespace WarframeApiWrapper.Objects
         public DateTime Activation { get; set; }
         public required string StartString { get; set; }
 
+        [JsonPropertyName("factionKey")]
         [JsonConverter(typeof(FactionConverter))]
         public Faction Enemy { get; set; }
         
+        [JsonPropertyName("typeKey")]
         [JsonConverter(typeof(MissionTypeConverter))]
         public MissionType MissionType { get; set; }
-        
+
+        [JsonPropertyName("nodeKey")]
+        public required string Node { get; set; }
+
+        [JsonPropertyName("tierNum")]    
         [JsonConverter(typeof(FissureTierConverter))]
         public FissureTier Tier { get; set; }
     }

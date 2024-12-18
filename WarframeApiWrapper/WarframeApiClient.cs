@@ -1,4 +1,3 @@
-
 using System.Text.Json;
 using WarframeApiWrapper.Converters;
 
@@ -11,6 +10,7 @@ namespace WarframeApiWrapper
         {
             { Endpoints.Alerts, "/alerts" },
             { Endpoints.Fissure, "/fissures" },
+            { Endpoints.Invasions, "/invasions" },
             { Endpoints.ArchonHunt, "/archonHunt" },
             { Endpoints.CetusStatus, "/cetusCycle" },
             { Endpoints.VallisStatus, "/vallisCycle" },
@@ -28,7 +28,7 @@ namespace WarframeApiWrapper
                     new MissionTypeConverter()
                 }
             };
-            
+
             var target = $"{BaseURL}{ApiEndpoints[endpoint]}";
             using HttpClient client = new HttpClient();
             var request = await client.GetStringAsync(target);

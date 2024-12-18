@@ -1,12 +1,8 @@
-using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using WarframeApiWrapper.Objects;
 
 namespace WarframeApiWrapper.Converters
 {
-
-
     public class MissionTypeConverter : JsonConverter<MissionType>
     {
         public override MissionType Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
@@ -43,8 +39,6 @@ namespace WarframeApiWrapper.Converters
                 _ => MissionType.Unknown
             };
 
-            Console.WriteLine($"{missionType} = {placeholder}");
-
             return placeholder;
         }
 
@@ -67,11 +61,11 @@ namespace WarframeApiWrapper.Converters
                 MissionType.MobileDefense => "Mobile Defense",
 
                 MissionType.Alchemy => "Alchemy",
-                
+
                 MissionType.VoidFlood => "Void Flood",
                 MissionType.VoidCascade => "Void Cascade",
                 MissionType.VoidArmagedon => "Void Armagedon",
-                
+
                 MissionType.Orphix => "Orphix",
                 MissionType.Volatile => "Volatile",
                 MissionType.Skirmish => "Skirmish",
