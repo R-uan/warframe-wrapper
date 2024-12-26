@@ -19,9 +19,8 @@ namespace WarframeApiWrapper
 
     public class ArchonMission
     {
-
-        public bool Nightmare { get; set; }
         public bool Archwing { get; set; }
+        public bool Nightmare { get; set; }
         public bool IsSharkwing { get; set; }
 
         [JsonPropertyName("typeKey")]
