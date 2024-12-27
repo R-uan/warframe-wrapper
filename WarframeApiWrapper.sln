@@ -5,9 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarframeApiWrapper", "WarframeApiWrapper\WarframeApiWrapper.csproj", "{4D8F5A8E-C742-4EAF-8434-FE34D13AAB47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAPI.Tests", "WAPI.Tests\WAPI.Tests.csproj", "{11307BC5-F743-4FFD-81A4-78D7B6F625CA}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManualTesting", "ManualTesting\ManualTesting.csproj", "{F789461A-EDAC-40AC-8E79-9C3A99095D28}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarframeApiWrapper.Tests", "WarframeApiWrapper.Tests\WarframeApiWrapperTests.csproj", "{11307BC5-F743-4FFD-81A4-78D7B6F625CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManualTestingApi", "ManualTestingApi\ManualTestingApi.csproj", "{F13F42A2-A7CE-4365-8095-2282F3C95C9B}"
 EndProject

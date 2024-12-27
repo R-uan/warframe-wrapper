@@ -5,7 +5,7 @@ namespace WarframeApiWrapper
 {
     public class WarframeApiClient
     {
-        private static string BaseURL = "https://api.warframestat.us/pc";
+        private static readonly string BaseURL = "https://api.warframestat.us/pc";
         private static readonly Dictionary<Endpoints, string> ApiEndpoints = new()
         {
             { Endpoints.Alerts, "/alerts" },

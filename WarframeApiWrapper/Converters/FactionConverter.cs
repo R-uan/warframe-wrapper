@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace WarframeApiWrapper.Converters 
+namespace WarframeApiWrapper.Converters
 {
     public class FactionConverter : JsonConverter<Faction>
     {
@@ -9,7 +9,8 @@ namespace WarframeApiWrapper.Converters
         {
             var value = reader.GetString()?.ToLower();
 
-            var placeholder = value switch {
+            var placeholder = value switch
+            {
                 "grineer" => Faction.Grineer,
                 "corpus" => Faction.Corpus,
                 "infested" => Faction.Infested,
@@ -18,14 +19,13 @@ namespace WarframeApiWrapper.Converters
                 _ => Faction.Unknown
             };
 
-            Console.WriteLine($"{value} = {placeholder}");
-
             return placeholder;
         }
 
         public override void Write(Utf8JsonWriter writer, Faction value, JsonSerializerOptions options)
         {
-            var factionString = value switch {
+            var factionString = value switch
+            {
                 Faction.Orokin => "Orokin",
                 Faction.Grineer => "Grineer",
                 Faction.Corpus => "Corpus",

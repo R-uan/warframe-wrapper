@@ -1,14 +1,14 @@
 using WarframeApiWrapper;
 using WarframeApiWrapper.Objects;
 
-namespace WAPI.Tests
+namespace WarframeApiWrapper.Tests
 {
-    public class WAPITests
+    public class WarframeApiWrapperTests
     {
         [Fact]
         public async Task GetCetusStatusTest()
         {
-            var request = await WarframeApiWrapper.WAPI.GetCetusStatus();
+            var request = await WarframeApi.GetCetusStatus();
             Assert.IsType<CetusStatus>(request);
             Assert.NotNull(request.Id);
             Assert.True(request.Active == "night" || request.Active == "day");
@@ -18,7 +18,7 @@ namespace WAPI.Tests
         [Fact]
         public async Task GetDeimosStatusTest()
         {
-            var request = await WarframeApiWrapper.WAPI.GetDeimosStatus();
+            var request = await WarframeApi.GetDeimosStatus();
             Assert.IsType<CambionDriftStatus>(request);
             Assert.True(request.Active == "vome" || request.Active == "fass");
             if (request.Active == "vome") Assert.True(request.IsVome);
@@ -28,7 +28,7 @@ namespace WAPI.Tests
         [Fact]
         public async Task GetVallisStatusTest()
         {
-            var request = await WarframeApiWrapper.WAPI.GetVallisStatus();
+            var request = await WarframeApi.GetVallisStatus();
             Assert.IsType<OrbVallisStatus>(request);
             Assert.True(request.Active == "cold" || request.Active == "warm");
         }
@@ -36,7 +36,7 @@ namespace WAPI.Tests
         [Fact]
         public async Task GetAlertsTest()
         {
-            var request = await WarframeApiWrapper.WAPI.GetAlerts();
+            var request = await WarframeApi.GetAlerts();
             Assert.IsType<List<Alert>>(request);
             foreach (var alert in request)
             {
@@ -49,7 +49,7 @@ namespace WAPI.Tests
         [Fact]
         public async Task GetFissuresTest()
         {
-            var request = await WarframeApiWrapper.WAPI.GetFissures();
+            var request = await WarframeApi.GetFissures();
             Assert.IsType<List<Fissure>>(request);
             foreach (var fissure in request)
             {
@@ -62,7 +62,7 @@ namespace WAPI.Tests
         [Fact]
         public async Task GetArchonHuntTest()
         {
-            var request = await WarframeApiWrapper.WAPI.GetArchonHunt();
+            var request = await WarframeApi.GetArchonHunt();
             Assert.IsType<ArchonHunt>(request);
             Assert.NotNull(request.Id);
             Assert.NotEqual(Faction.Unknown, request.Faction);
@@ -76,7 +76,7 @@ namespace WAPI.Tests
         [Fact]
         public async Task GetInvasions()
         {
-            var request = await WarframeApiWrapper.WAPI.GetInvasions();
+            var request = await WarframeApi.GetInvasions();
             Assert.IsType<List<Invasion>>(request);
             foreach (var invasion in request)
             {

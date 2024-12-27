@@ -2,7 +2,7 @@ using WarframeApiWrapper.Objects;
 
 namespace WarframeApiWrapper
 {
-    public partial class WAPI
+    public partial class WarframeApi
     {
         public static async Task<CetusStatus> GetCetusStatus()
             => await WarframeApiClient.Get<CetusStatus>(Endpoints.CetusStatus) ?? throw new Exception();
@@ -21,8 +21,8 @@ namespace WarframeApiWrapper
 
         public static async Task<ArchonHunt> GetArchonHunt()
             => await WarframeApiClient.Get<ArchonHunt>(Endpoints.ArchonHunt) ?? throw new Exception();
-    
-        public static async Task<List<Invasion>> GetInvasions() 
+
+        public static async Task<List<Invasion>> GetInvasions()
             => await WarframeApiClient.Get<List<Invasion>>(Endpoints.Invasions) ?? throw new Exception();
     }
 }
