@@ -15,6 +15,9 @@ namespace WarframeApiWrapper.Objects
 
         public bool IsStorm { get; set; }
 
+        [JsonPropertyName("isHard")]
+        public bool IsSteelPath { get; set; }
+
         [JsonPropertyName("factionKey")]
         [JsonConverter(typeof(FactionConverter))]
         public Faction Enemy { get; set; }
