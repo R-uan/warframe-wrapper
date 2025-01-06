@@ -16,6 +16,7 @@ namespace WarframeApiWrapper.Converters
                 "infested" => Faction.Infested,
                 "orokin" => Faction.Orokin,
                 "narmer" => Faction.Narmer,
+                "corrupted" => Faction.Corrupted,
                 _ => Faction.Unknown
             };
 
@@ -32,6 +33,7 @@ namespace WarframeApiWrapper.Converters
                 Faction.Infested => "Infested",
                 Faction.Unknown => "Unknown",
                 Faction.Narmer => "Narmer",
+                Faction.Corrupted => "Corrupted",
                 _ => "Unknown"
             };
 

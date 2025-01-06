@@ -9,6 +9,7 @@ namespace WarframeApiWrapper
         private static readonly Dictionary<Endpoints, string> ApiEndpoints = new()
         {
             { Endpoints.Alerts, "/alerts" },
+            { Endpoints.Sortie, "/sortie/" },
             { Endpoints.Fissure, "/fissures" },
             { Endpoints.Invasions, "/invasions" },
             { Endpoints.ArchonHunt, "/archonHunt" },

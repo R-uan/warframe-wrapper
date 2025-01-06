@@ -24,5 +24,8 @@ namespace WarframeApiWrapper
 
         public static async Task<List<Invasion>> GetInvasions()
             => await WarframeApiClient.Get<List<Invasion>>(Endpoints.Invasions) ?? throw new Exception();
+
+        public static async Task<Sortie> GetSortie()
+            => await WarframeApiClient.Get<Sortie>(Endpoints.Sortie) ?? throw new Exception();
     }
 }

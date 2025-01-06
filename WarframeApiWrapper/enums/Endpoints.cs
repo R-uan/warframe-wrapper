@@ -8,6 +8,7 @@ namespace WarframeApiWrapper
         Alerts,
         Fissure,
         ArchonHunt,
-        Invasions
+        Invasions,
+        Sortie
     }
 }
