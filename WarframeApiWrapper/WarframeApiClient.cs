@@ -13,6 +13,7 @@ namespace WarframeApiWrapper
             { Endpoints.Fissure, "/fissures" },
             { Endpoints.Invasions, "/invasions" },
             { Endpoints.ArchonHunt, "/archonHunt" },
+            { Endpoints.VoidTrader, "/voidTrader" },
             { Endpoints.CetusStatus, "/cetusCycle" },
             { Endpoints.VallisStatus, "/vallisCycle" },
             { Endpoints.CambionDriftStatus, "/cambionCycle" },
@@ -26,7 +27,8 @@ namespace WarframeApiWrapper
                 Converters = {
                     new FactionConverter(),
                     new FissureTierConverter(),
-                    new MissionTypeConverter()
+                    new MissionTypeConverter(),
+                    new InventoryConverter()
                 }
             };
 

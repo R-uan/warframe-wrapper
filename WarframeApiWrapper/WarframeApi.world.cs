@@ -27,5 +27,8 @@ namespace WarframeApiWrapper
 
         public static async Task<Sortie> GetSortie()
             => await WarframeApiClient.Get<Sortie>(Endpoints.Sortie) ?? throw new Exception();
+
+        public static async Task<VoidTrader> GetVoidtrader()
+            => await WarframeApiClient.Get<VoidTrader>(Endpoints.VoidTrader) ?? throw new Exception();
     }
 }

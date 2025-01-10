@@ -9,6 +9,7 @@ namespace WarframeApiWrapper
         Fissure,
         ArchonHunt,
         Invasions,
-        Sortie
+        Sortie,
+        VoidTrader
     }
 }

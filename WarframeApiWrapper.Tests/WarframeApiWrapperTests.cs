@@ -84,5 +84,22 @@ namespace WarframeApiWrapper.Tests
                 Assert.NotEqual(Faction.Unknown, invasion.Defender.Faction);
             }
         }
+
+        [Fact]
+        public async Task GetVoidTrader()
+        {
+            var request = await WarframeApi.GetVoidtrader();
+            Assert.NotNull(request);
+            Assert.IsType<VoidTrader>(request);
+            if (request.Active == false)
+            {
+                Assert.Null(request.Inventory);
+            }
+            else
+            {
+                Assert.NotNull(request.Inventory);
+                Assert.True(request.Inventory.Count > 0);
+            }
+        }
     }
 }

@@ -35,6 +35,7 @@ namespace WarframeApiWrapper.Converters
                 "void armagedon" => MissionType.VoidArmagedon,
                 // ?
                 "unknown" => MissionType.Unknown,
+                "free roam" => MissionType.FreeRoam,
                 "corruption" => MissionType.Corruption,
                 _ => MissionType.Unknown
             };
@@ -71,6 +72,7 @@ namespace WarframeApiWrapper.Converters
                 MissionType.Skirmish => "Skirmish",
 
                 MissionType.Unknown => "Unknown",
+                MissionType.FreeRoam => "Free Roam",
                 MissionType.Corruption => "Corruption",
                 _ => "Unknown"
             };

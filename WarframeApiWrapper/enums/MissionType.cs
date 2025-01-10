@@ -23,6 +23,7 @@ namespace WarframeApiWrapper
         Skirmish,
         Volatile,
         Assault,
+        FreeRoam,
         Unknown,
     }
 }
